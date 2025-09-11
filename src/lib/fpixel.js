@@ -1,4 +1,5 @@
-export const FB_PIXEL_ID = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID || "24896793486591265";
+export const FB_PIXEL_ID = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID;
+
 
 // Record any Facebook Pixel event
 export const fbqEvent = (event, params = {}) => {
