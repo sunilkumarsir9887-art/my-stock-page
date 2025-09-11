@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function Home() {
   // 🔗 Single variable for Telegram link
   const telegramLink = "https://t.me/+xnUvVHd3rddmMTM1";
-  const [time, setTime] = useState(15); // start from 30 sec
+  const [time, setTime] = useState(30); // start from 30 sec
 
   useEffect(() => {
     // Countdown interval
