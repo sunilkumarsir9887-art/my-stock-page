@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Telegram Ads",
-  description: "Ads By BizUdaan",
+  title: "Crypto With Sunil",
+  description: "Website By BrandFlow",
 };
 
 export default function RootLayout({ children }) {

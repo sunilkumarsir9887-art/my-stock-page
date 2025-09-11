@@ -30,5 +30,5 @@ body {
   aspect-ratio: 1/1;
   border-radius: 100%;
   margin-bottom: 20px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }

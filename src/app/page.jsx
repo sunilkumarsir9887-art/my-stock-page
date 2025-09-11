@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Home() {
   // 🔗 Single variable for Telegram link
-  const telegramLink = "https://t.me/yourchannel";
+  const telegramLink = "https://t.me/+xnUvVHd3rddmMTM1";
   const [time, setTime] = useState(15); // start from 30 sec
 
   useEffect(() => {
@@ -29,22 +29,24 @@ export default function Home() {
     <div className="min-h-screen flex flex-col justify-center items-center bg-white text-gray-800 p-6">
       <Image
       className="logo-image"
-      src="/logo.jpeg"
+      src="/stock-market-logo.jpg"
       alt="Image"
       width={200}
       height={200}/>
       {/* Headline */}
       <h1 className="text-3xl md:text-4xl font-bold text-center mb-4">
-        📈 Join Our Free Telegram Channel
+        Crypto With Sunil
       </h1>
       <p className="text-center text-lg text-gray-600 mb-8">
-        ✅Daily Free Trading Calls
+        ✅SEBI-Registered Expert Guidance for Safe & Profitable Trading!
         <br/>
-        ✅Expert in Gold and crypto
+        📈Stock Market Protection & Expert Tips for Success!
         <br/>
-        ✅5-6 Calls in a Day
+        Avoid Losses, Maximize Gains - Trade Safely!
         <br/>
-        ✅Live Market Update
+        Protect your capital & grow your profits with Sunil!
+        <br/>
+        Join now for safe & profitable stock market trading!✅
       </p>
 
       {/* Action Buttons */}
