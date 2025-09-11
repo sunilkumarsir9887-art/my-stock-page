@@ -1,5 +1,6 @@
 "use client";
 
+import { trackAddToCart, trackPurchase } from "@/lib/fpixel";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -25,33 +26,42 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
+  const handleAddToCart = () => {
+  trackAddToCart({
+    id: "Telegram Join",
+    name: "Telegram Join",
+    price: 0,
+  });
+};
+
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-white text-gray-800 p-6">
       <Image
-      className="logo-image"
-      src="/stock-market-logo.jpg"
-      alt="Image"
-      width={200}
-      height={200}/>
+        className="logo-image"
+        src="/stock-market-logo.jpg"
+        alt="Image"
+        width={200}
+        height={200} />
       {/* Headline */}
       <h1 className="text-3xl md:text-4xl font-bold text-center mb-4">
         Crypto With Sunil
       </h1>
       <p className="text-center text-lg text-gray-600 mb-8">
         ✅SEBI-Registered Expert Guidance for Safe & Profitable Trading!
-        <br/>
+        <br />
         📈Stock Market Protection & Expert Tips for Success!
-        <br/>
+        <br />
         Avoid Losses, Maximize Gains - Trade Safely!
-        <br/>
+        <br />
         Protect your capital & grow your profits with Sunil!
-        <br/>
+        <br />
         Join now for safe & profitable stock market trading!✅
       </p>
 
       {/* Action Buttons */}
       <div className="flex flex-col gap-4 w-full max-w-xs">
         <motion.a
+          onClick={handleAddToCart}
           href={telegramLink}
           target="_blank"
           rel="noopener noreferrer"
@@ -64,6 +74,7 @@ export default function Home() {
         </motion.a>
 
         <motion.a
+          onClick={handleAddToCart}
           href={telegramLink}
           target="_blank"
           rel="noopener noreferrer"
@@ -74,6 +85,7 @@ export default function Home() {
         </motion.a>
 
         <motion.a
+          onClick={handleAddToCart}
           href={telegramLink}
           target="_blank"
           rel="noopener noreferrer"
@@ -99,3 +111,14 @@ export default function Home() {
     </div>
   );
 }
+
+
+// const handlePurchase = () => {
+//   trackPurchase({
+//     total: 149.99,
+//     items: [
+//       { id: "Telegram Join", quantity: 1, price: 49.99 },
+//     ],
+//   });
+// };
+
