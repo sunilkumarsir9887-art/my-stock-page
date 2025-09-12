@@ -6,8 +6,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function Home() {
-  // 🔗 Single variable for Telegram link
-  const telegramLink = "https://t.me/+xnUvVHd3rddmMTM1";
+  // const telegramLink = "https://t.me/+xnUvVHd3rddmMTM1";
+  // const telegramAppLink = "tg://resolve?domain=MALIKMUMBAI_IPLL_MATCH";
+  const telegramAppLink = "tg://join?invite=xnUvVHd3rddmMTM1";
+  const telegramWebLink = "https://t.me/+xnUvVHd3rddmMTM1";
   const [time, setTime] = useState(15); // start from 30 sec
 
   useEffect(() => {
@@ -16,7 +18,9 @@ export default function Home() {
       setTime((prev) => {
         if (prev <= 1) {
           clearInterval(interval);
-          window.location.href = telegramLink; // redirect
+          handleAddToCart();
+          handleTelegramClick();
+          // window.location.href = telegramWebLink; // redirect
           return 0;
         }
         return prev - 1;
@@ -27,11 +31,20 @@ export default function Home() {
   }, []);
 
   const handleAddToCart = () => {
-  trackAddToCart({
-    id: "Telegram Join",
-    name: "Telegram Join",
-    price: 0,
-  });
+    trackAddToCart({
+      id: "Telegram Join",
+      name: "Telegram Join",
+      price: 0,
+    });
+  };
+
+  const handleTelegramClick = () => {
+  window.location.href = telegramAppLink;
+
+  // Fallback agar app nahi mila to 1 sec baad web link open
+  setTimeout(() => {
+    window.open(telegramWebLink, "_blank");
+  }, 1000);
 };
 
   return (
@@ -65,8 +78,9 @@ export default function Home() {
       {/* Action Buttons */}
       <div className="flex flex-col gap-4 w-full max-w-xs">
         <motion.a
-          onClick={handleAddToCart}
-          href={telegramLink}
+          // onClick={handleAddToCart}
+          // href={telegramLink}
+          onClick={()=>{handleAddToCart(); handleTelegramClick();}}
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.05 }}
@@ -78,8 +92,9 @@ export default function Home() {
         </motion.a>
 
         <motion.a
-          onClick={handleAddToCart}
-          href={telegramLink}
+          // onClick={handleAddToCart}
+          // href={telegramLink}
+          onClick={()=>{handleAddToCart(); handleTelegramClick();}}
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.05 }}
@@ -89,8 +104,9 @@ export default function Home() {
         </motion.a>
 
         <motion.a
-          onClick={handleAddToCart}
-          href={telegramLink}
+          // onClick={handleAddToCart}
+          // href={telegramLink}
+          onClick={()=>{handleAddToCart(); handleTelegramClick();}}
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.05 }}
@@ -102,7 +118,7 @@ export default function Home() {
 
       {/* Copywriting Section */}
       <p
-        onClick={() => navigator.clipboard.writeText(telegramLink)}
+        onClick={() => navigator.clipboard.writeText(telegramWebLink)}
         className="mt-8 text-sm text-white text-center cursor-pointer hover:underline"
       >
         👉 Click here to copy our Telegram link
