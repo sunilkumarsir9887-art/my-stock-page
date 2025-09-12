@@ -103,13 +103,13 @@ export default function Home() {
       {/* Copywriting Section */}
       <p
         onClick={() => navigator.clipboard.writeText(telegramLink)}
-        className="mt-8 text-sm text-gray-500 text-center cursor-pointer hover:underline"
+        className="mt-8 text-sm text-white text-center cursor-pointer hover:underline"
       >
         👉 Click here to copy our Telegram link
       </p>
 
       {/* Footer */}
-      <p className="mt-6 text-xs text-gray-400 text-center">
+      <p className="mt-6 text-xs text-yellow-500 text-center">
         *You will be redirected automatically in {time} seconds
       </p>
     </div>
