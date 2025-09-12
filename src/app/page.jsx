@@ -35,7 +35,7 @@ export default function Home() {
 };
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center bg-white text-gray-800 p-6">
+    <div className="min-h-screen flex flex-col justify-center items-center  text-gray-800 p-6">
       <Image
         className="logo-image"
         src="/stock-market-logo.jpg"
@@ -43,17 +43,21 @@ export default function Home() {
         width={200}
         height={200} />
       {/* Headline */}
-      <h1 className="text-3xl md:text-4xl font-bold text-center mb-4">
+      <h1 className="card-shadow text-3xl md:text-4xl font-bold text-white text-center mb-4">
         Crypto With Sunil
       </h1>
-      <p className="text-center text-lg text-gray-600 mb-8">
+      <p className="text-center text-2x1 text-white mb-8 card-shadow">
         ✅SEBI-Registered Expert Guidance for Safe & Profitable Trading!
+        <br />
         <br />
         📈Stock Market Protection & Expert Tips for Success!
         <br />
+        <br />
         Avoid Losses, Maximize Gains - Trade Safely!
         <br />
+        <br />
         Protect your capital & grow your profits with Sunil!
+        <br />
         <br />
         Join now for safe & profitable stock market trading!✅
       </p>
@@ -70,7 +74,7 @@ export default function Home() {
           transition={{ duration: 0.6, repeat: Infinity, repeatDelay: 3 }}
           className="bg-blue-500 text-white text-center py-3 rounded-2xl font-semibold shadow-md"
         >
-          🚀 Join Free Telegram Now
+          🚀 Join Telegram Now
         </motion.a>
 
         <motion.a
@@ -81,7 +85,7 @@ export default function Home() {
           whileHover={{ scale: 1.05 }}
           className="bg-green-500 text-white text-center py-3 rounded-2xl font-semibold shadow-md"
         >
-          ✅ Get Free Tips Today
+          ✅ Get Tips Today
         </motion.a>
 
         <motion.a
