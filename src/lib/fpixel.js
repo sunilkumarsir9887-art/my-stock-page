@@ -1,19 +1,25 @@
 export const FB_PIXEL_ID = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID;
 
-// Record any Facebook Pixel event
+// ----------------------------
+// Generic FB Pixel helper
+// ----------------------------
 export const fbqEvent = (event, params = {}, isCustom = false) => {
-  if (typeof window.fbq === "function") {
+  if (typeof window !== "undefined" && typeof window.fbq === "function") {
     if (isCustom) {
-      window.fbq("trackCustom", event, params); // for custom events
+      window.fbq("trackCustom", event, params); // Custom events
     } else {
-      window.fbq("track", event, params); // for standard events
+      window.fbq("track", event, params); // Standard events
     }
   } else {
     console.warn("Facebook Pixel not initialized");
   }
 };
 
-// Pre-made helpers
+// ----------------------------
+// FB Pixel Pre-made helpers
+// ----------------------------
+
+// 🛒 Add to Cart
 export const trackAddToCart = (product) => {
   fbqEvent("AddToCart", {
     content_name: product.name,
@@ -24,6 +30,7 @@ export const trackAddToCart = (product) => {
   });
 };
 
+// 💳 Purchase
 export const trackPurchase = (order) => {
   fbqEvent("Purchase", {
     value: order.total,
@@ -33,12 +40,22 @@ export const trackPurchase = (order) => {
       quantity: item.quantity,
       item_price: item.price,
     })),
-    num_items: order.items.length, // ✅ added
+    num_items: order.items.length,
     content_type: "product",
   });
 };
 
-// Example custom event: Telegram join
+// ✅ Subscribe
+export const trackSubscribe = () => {
+  fbqEvent("Subscribe");
+};
+
+// 📢 Telegram Join (custom event)
 export const trackTelegramJoin = () => {
   fbqEvent("TelegramJoin", { method: "cta_button" }, true);
+};
+
+// 📝 Lead
+export const trackLead = () => {
+  fbqEvent("Lead");
 };

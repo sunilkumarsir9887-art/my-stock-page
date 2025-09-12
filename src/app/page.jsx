@@ -1,6 +1,6 @@
 "use client";
 
-import { trackAddToCart, trackPurchase } from "@/lib/fpixel";
+import { trackSubscribe } from "@/lib/fpixel";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -18,7 +18,7 @@ export default function Home() {
       setTime((prev) => {
         if (prev <= 1) {
           clearInterval(interval);
-          handleAddToCart();
+          handleButtonClick();
           handleTelegramClick();
           // window.location.href = telegramWebLink; // redirect
           return 0;
@@ -30,22 +30,18 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  const handleAddToCart = () => {
-    trackAddToCart({
-      id: "Telegram Join",
-      name: "Telegram Join",
-      price: 0,
-    });
+  const handleButtonClick = () => {
+    trackSubscribe();
   };
 
   const handleTelegramClick = () => {
-  window.location.href = telegramAppLink;
+    window.location.href = telegramAppLink;
 
-  // Fallback agar app nahi mila to 1 sec baad web link open
-  setTimeout(() => {
-    window.open(telegramWebLink, "_blank");
-  }, 1000);
-};
+    // Fallback agar app nahi mila to 1 sec baad web link open
+    setTimeout(() => {
+      window.open(telegramWebLink, "_blank");
+    }, 1000);
+  };
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center  text-gray-800 p-6">
@@ -80,7 +76,7 @@ export default function Home() {
         <motion.a
           // onClick={handleAddToCart}
           // href={telegramLink}
-          onClick={()=>{handleAddToCart(); handleTelegramClick();}}
+          onClick={() => { handleButtonClick(); handleTelegramClick(); }}
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.05 }}
@@ -94,7 +90,7 @@ export default function Home() {
         <motion.a
           // onClick={handleAddToCart}
           // href={telegramLink}
-          onClick={()=>{handleAddToCart(); handleTelegramClick();}}
+          onClick={() => { handleButtonClick(); handleTelegramClick(); }}
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.05 }}
@@ -106,7 +102,7 @@ export default function Home() {
         <motion.a
           // onClick={handleAddToCart}
           // href={telegramLink}
-          onClick={()=>{handleAddToCart(); handleTelegramClick();}}
+          onClick={() => { handleButtonClick(); handleTelegramClick(); }}
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.05 }}
